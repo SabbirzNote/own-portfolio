@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .header-inner {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 2em;
+      color: #555;
+      font-weight: 700;
+      letter-spacing: 1px;
+      flex: 1 1 0;
+      text-align: left;
+    }
+    .btn-talk {
+      color: white;
+      text-decoration: none;
+      padding: 8px 28px;
+      background: skyblue;
+      border-radius: 10px;
+      border: 2px solid grey;
+      font-weight: 500;
+      transition: .3s;
+      font-size: 1.1em;
+      margin: 0 24px;
+      flex: 1 1 0;
+      text-align: center;
+      display: inline-block;
+    }
+    .btn-talk:hover {
+      color: skyblue;
+      background: transparent;
+      border-color: skyblue;
+    }
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex: 1 1 0;
+      justify-content: flex-end;
+      text-align: right;
+    }
+    .navigation a {
+      font-size: 1.1em;
+      color: skyblue;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .navigation a:hover {
+      color: orange;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      justify-content: space-between;
+      margin-left: 18px;
+    }
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background: #555;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      header {
+        padding: 14px 10px;
+      }
+      .btn-talk {
+        margin: 0 8px;
+        font-size: 1em;
+        padding: 7px 16px;
+      }
+      .logo {
+        font-size: 1.5em;
+      }
+      .navigation {
+        gap: 18px;
+      }
+    }
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 2vw;
+      }
+      .header-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo, .btn-talk, .navigation {
+        flex: unset;
+        text-align: left;
+      }
+      .btn-talk {
+        margin: 0 8px;
+        font-size: 1em;
+        padding: 7px 12px;
+      }
+      .navigation {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 2vw;
+        background: rgba(255,255,255,0.98);
+        flex-direction: column;
+        gap: 0;
+        width: 180px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        z-index: 200;
+        border-radius: 8px;
+        padding: 10px 0;
+      }
+      .navigation.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+        margin-left: 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 1.1em;
+      }
+      .btn-talk {
+        font-size: 0.95em;
+        padding: 6px 8px;
+      }
+      .navigation a {
+        font-size: 1em;
+      }
+    }
+    .home {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background-image: url(profile.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 120px 100px 40px 100px;
+    }
+    .content {
+      max-width: 500px;
+      color: #555;
+      background: rgba(255,255,255,0.88);
+      padding: 32px 28px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .content h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .content .intro {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .btn-group {
+      margin-bottom: 18px;
+    }
+    .btn-group a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 32px;
+      background: skyblue;
+      border-radius: 10px;
+
+      border: 2px solid skyblue;
+      font-weight: 500;
+      transition: .3s;
+      display: inline-block;
+      margin-right: 16px;
+      margin-bottom: 10px;
+    }
+    .btn-group a:last-child {
+      margin-right: 0;
+
+    }
+    .btn-group a:hover {
+      color: skyblue;
+      background: transparent;
+
+      border-color: skyblue;
+    }
+    .social-icons {
+      margin-top: 18px;
+    }
+    .social-icons a {
+      display: inline-block;
+
+      width: 35px;
+      height: 35px;
+      background: skyblue;
+      border-radius: 50%;
+      margin-right: 14px;
+      text-align: center;
+      line-height: 35px;
+      border: 1px solid white;
+      outline: 2px solid skyblue;
+      transition: transform .3s;
+    }
+    .social-icons a:last-child {
+      margin-right: 0;
+    }
+    .social-icons a i {
+      color: white;
+    }
+    .social-icons a:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h2 class="logo">Tanzila</h2>
+      <a href="contact.html" class="btn-talk">Let's talk</a>
+      <div class="hamburger" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="navigation" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="edu.html">Education</a>
+        <a href="port.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <section class="home">
+    <div class="content">
+      <h2>Hi, I'm <span style="color:skyblue;">Tanzila Chy</span></h2>
+      <p class="intro">
+        I’m Tanzila Chy, a passionate <strong>Frontend Developer</strong> skilled in building modern, responsive websites.
+      </p>
+      <div class="btn-group">
+        <a href="contact.html">Hire me</a>
+        <a href="port.html">See projects</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </section>
+  <script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    document.addEventListener('click', (e) => {
+      if (
+        navMenu.classList.contains('active') &&
+        !navMenu.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        navMenu.classList.remove('active');
+      }
+    });
+    Array.from(navMenu.querySelectorAll('a')).forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

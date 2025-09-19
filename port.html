@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Tanzila</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #444;
+    }
+    .portfolio-section {
+      max-width: 900px;
+      margin: 100px auto 40px auto;
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    .portfolio-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+    }
+    .project-card {
+      background: #eaf6fb;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-left: 4px solid skyblue;
+    }
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      border-left-color: orange;
+    }
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: skyblue;
+      margin-bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .project-desc {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 0.2rem;
+    }
+    .project-tags {
+      display: flex;
+      gap: 0.5em;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background: skyblue;
+      color: #fff;
+      border-radius: 6px;
+      padding: 0.2em 0.7em;
+      font-size: 0.95em;
+      font-weight: 500;
+      display: inline-block;
+    }
+    .project-links {
+      margin-top: 0.3em;
+    }
+    .project-links a {
+      color: orange;
+      text-decoration: none;
+      font-size: 1em;
+      margin-right: 1em;
+      transition: color 0.2s;
+    }
+    .project-links a:hover {
+      color: skyblue;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .portfolio-section {
+        padding: 1.2rem 0.7rem;
+        margin: 70px 2vw 20px 2vw;
+      }
+      .portfolio-title {
+        font-size: 1.3rem;
+      }
+      .project-title {
+        font-size: 1em;
+      }
+      .project-desc {
+        font-size: 0.97em;
+      }
+    }
+    .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: skyblue;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  margin: 24px 0 0 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: none;
+}
+.back-btn:hover {
+  background: orange;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+@media (max-width: 600px) {
+  .back-btn {
+    margin: 14px 0 0 8px;
+    font-size: 0.97em;
+    padding: 0.4em 0.8em;
+  }
+}
+  </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn" title="Back to Home">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+  <section class="portfolio-section">
+    <div class="portfolio-title">My Portfolio</div>
+    <div class="projects-list">
+      <div class="project-card">
+        <div class="project-title">
+          <i class="fa-solid fa-laptop-code"></i> Personal Portfolio Website
+        </div>
+        <div class="project-desc">
+          A modern, responsive portfolio website to showcase my skills, projects, and contact information.
+        </div>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">
+          <i class="fa-brands fa-react"></i> React Task Manager
+        </div>
+        <div class="project-desc">
+          A user-friendly task manager app built with React, allowing users to add, edit, and delete tasks efficiently.
+        </div>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">CSS</span>
+        </div>
+        <div class="project-links">
+          <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">
+          <i class="fa-solid fa-palette"></i> Graphic Design Portfolio
+        </div>
+        <div class="project-desc">
+          A collection of my best graphic design works, including logos, banners, and social media creatives.
+        </div>
+        <div class="project-tags">
+          <span class="tag">Photoshop</span>
+          <span class="tag">Illustrator</span>
+        </div>
+        <div class="project-links">
+          <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>

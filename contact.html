@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Tanzila</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #444;
+    }
+    .contact-section {
+      max-width: 700px;
+      margin: 100px auto 40px auto;
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .contact-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+    .contact-info {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    .contact-info a {
+      color: skyblue;
+      text-decoration: none;
+      margin-left: 0.5em;
+      word-break: break-all;
+    }
+    .contact-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8em 1em;
+      border: 1.5px solid #cbe7f6;
+      border-radius: 8px;
+      font-size: 1em;
+      background: #eaf6fb;
+      color: #444;
+      resize: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: skyblue;
+      outline: none;
+    }
+    .contact-form button {
+      background: skyblue;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7em 2em;
+      font-size: 1.1em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .contact-form button:hover {
+      background: orange;
+    }
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: skyblue;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.3rem;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+      outline: 2px solid skyblue;
+      border: 1px solid #fff;
+    }
+    .social-links a:hover {
+      background: orange;
+      outline-color: orange;
+      transform: translateY(-4px) scale(1.08);
+    }
+    @media (max-width: 600px) {
+      .contact-section {
+        padding: 1.2rem 0.7rem;
+        margin: 70px 2vw 20px 2vw;
+      }
+      .contact-title {
+        font-size: 1.3rem;
+      }
+      .contact-info {
+        font-size: 1em;
+      }
+      .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+      }
+    }
+    .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: skyblue;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  margin: 24px 0 0 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: none;
+}
+.back-btn:hover {
+  background: orange;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+@media (max-width: 600px) {
+  .back-btn {
+    margin: 14px 0 0 8px;
+    font-size: 0.97em;
+    padding: 0.4em 0.8em;
+  }
+}
+  </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn" title="Back to Home">
+  <i class="fa-solid fa-arrow-left"></i> Back to Home
+</a>
+  <section class="contact-section">
+    <div class="contact-title">Contact Me</div>
+    <div class="contact-info">
+      <i class="fa-solid fa-envelope"></i>
+      Email:
+      <a href="mailto:chowdhurytanzilaakther@gmail.com">chowdhurytanzilaakther@gmail.com</a>
+    </div>
+    <form class="contact-form" id="contactForm" autocomplete="off">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="formMsg" style="color:skyblue;font-size:1em;margin-top:0.5em;"></div>
+    </form>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://github.com/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://facebook.com/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+  </section>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formMsg').textContent = "Thank you for your message!";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
